@@ -1,0 +1,43 @@
+const btn = document.getElementById('btn');
+const setcity = document.getElementById('setcity');
+const selectcity = document.getElementById('selectcity');
+
+fetch(`frontend/city.json`)//ファイルを読みに行く
+.then(res => res.json())//配列（オブジェクトに変換）
+.then(citeis =>{
+    citeis.forEach(city =>{
+        const option = document.createElement('option');
+        option.value = city.id;
+        option.innerText = city.name;
+        selectcity.appendChild(option); //<select>タグの中に完成した<option>を合流させる
+    });
+});
+
+btn.addEventListener('click',()=>{
+    const num = selectcity.selectedIndex;
+    //プルダウンリストの中に含まれるすべての<option>要素を格納
+    const selectedOption = selectcity.options[num];
+　　//表示用のテキストを取得
+    const getcityName = selectedOption.innerText;
+    //バックエンドに渡すための独自IDを取得
+    const getcityID = selectedOption.value;
+    //const getcityID = selectedOption.dataset.id; //cityidの値を取得
+    //画面に表示
+    setcity.innerText = `名称: ${getcityName} (ID:${getcityID})`;
+    //バックエンドに送信する処理（例:fetch関数など）を呼ぶ
+    console.log ("送信するID;", getcityID);
+});
+
+/*データの流れ（4ステップ）
+JSON → 配列 (cities)
+cities は、JSONの中身が全部入った「名簿（配列）」そのものです。
+配列 → 個別のデータ (city)
+cities.forEach(city => { ... }) の部分で、名簿から1行分だけ取り出して、それを city という変数に入れます。
+1回目のループ：city は {"id": "230010", "name": "名古屋市"}
+2回目のループ：city は {"id": "210010", "name": "岐阜市"} ...という具合です。
+個別のデータ → 新しいタグ (option)
+document.createElement('option') で空のタグを生成し、そこに city の中身を流し込みます。
+option.value = city.id; （IDをコンピュータ用の値としてセット）
+option.innerText = city.name; （都市名を人間が見る文字としてセット）
+タグ → セレクトボックス (selectcity)
+完成した <option> を、実際の画面（selectcity）にガチャンと合体させます。*/

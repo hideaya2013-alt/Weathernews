@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"c:/_dev/FastAPI/Weathernews\" remote get-url origin)",
+      "Bash(gh issue view 1 --repo hideaway2013-alt/Weathernews)",
+      "Bash(gh.exe issue view 1 --repo hideaway2013-alt/Weathernews)",
+      "Bash(where gh.exe)",
+      "WebFetch(domain:github.com)",
+      "Bash(gh issue view 1 --repo hideaya2013-alt/Weathernews)",
+      "Bash(gh issue view 1)"
+    ]
+  }
+}

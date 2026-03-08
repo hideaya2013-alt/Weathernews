@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>テンプレート</title>
+<link href="./_common/images/favicon.ico" rel="shortcut icon">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+<link href="./_common/css/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>天気予報・ニュース</h1>
+<h2>学習用アプリ</h2>
+</div><!-- /.container -->
+</header>
+<main>
+<div class="container">
+<section>
+    <p>天気を表示する県を選んでください</p>
+<form id = "form">
+    <select name = "select" id = "selectcity">
+        <!--
+        <option value="230010" data-id="">名古屋市</option>
+        <option value="210010" data-id="">岐阜市</option>
+        <option value="240010" data-id="">津市</option>
+        -->
+    </select>
+    <button type="button" id = "btn">選択完了</button>
+    <p id = "setcity"></p>
+</section>
+</div><!-- /.container -->
+</main>
+<footer>
+<div class="container">
+<p>Weathernews・News</p>
+</div><!-- /.container -->
+</footer>
+<script src = "frontend/script.js"></script>
+</body>
+</html>
