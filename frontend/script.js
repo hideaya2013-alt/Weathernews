@@ -3,13 +3,15 @@ const setcity = document.getElementById('setcity');
 const selectcity = document.getElementById('selectcity');
 
 fetch(`frontend/city.json`)//ファイルを読みに行く
-.then(res => res.json())//配列（オブジェクトに変換）
+.then(res => res.json())//fetch した直後のデータは「生のレスポンス（通信結果）」という状態です。配列（オブジェクトに変換）
 .then(citeis =>{
     citeis.forEach(city =>{
-        const option = document.createElement('option');
-        option.value = city.id;
-        option.innerText = city.name;
-        selectcity.appendChild(option); //<select>タグの中に完成した<option>を合流させる
+　　　　//変換されたデータ（cities）は、配列になっています
+       //forEach を使い、配列の中身（名古屋市、岐阜市…）を 1つずつ順番に 取り出して、以下の処理を繰り返します。
+        const option = document.createElement('option');// ① <option>タグを新しく作る
+        option.value = city.id; // ② <option value="230010"> のようにIDを入れる
+        option.innerText = city.name; // ③ <option>名古屋市</option> のように名前を入れる
+        selectcity.appendChild(option); //④<select>タグの中に完成した<option>を合流させる
     });
 });
 
@@ -26,6 +28,9 @@ btn.addEventListener('click',()=>{
     setcity.innerText = `名称: ${getcityName} (ID:${getcityID})`;
     //バックエンドに送信する処理（例:fetch関数など）を呼ぶ
     console.log ("送信するID;", getcityID);
+    fetch(`/api/Weather?getcityID=${getcityID}`)
+     .then(res => res.json())
+     .then(data => console.log(data));
 });
 
 /*データの流れ（4ステップ）
