@@ -10,7 +10,7 @@ router = APIRouter(tags=["Weather"],prefix="/api")
 #============================
 #
 @router.get("/Weather",response_model=WeatherResponse)
-async def get_Weather(getcityID:str):
+async def get_Weather(getcityID:str): #←Swaggerのparametersに表示される
     url = f"https://weather.tsukumijima.net/api/forecast/city/{getcityID}"
     async with httpx.AsyncClient()as client:
         response = await client.get(url)
@@ -22,7 +22,7 @@ async def get_Weather(getcityID:str):
         return WeatherResponse(
             city_id = getcityID,
             published_at = data["publicTime"],
-            description = data["description"]["headlineText"],
+            description = data["description"]["text"],
             forecasts = [
             WeatherForecast(
             forecast_date = f["dateLabel"],

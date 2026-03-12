@@ -19,6 +19,7 @@ uv pip compile requirements.in -o requirements.lock
 ```bash
 # 開発サーバー（ホットリロードあり）
 .venv/Scripts/uvicorn backend.main:app --reload
+uv run uvicorn backend.main:app --reload
 
 # または
 cd backend && ../.venv/Scripts/uvicorn main:app --reload

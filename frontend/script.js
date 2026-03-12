@@ -30,8 +30,15 @@ btn.addEventListener('click',()=>{
     console.log ("送信するID;", getcityID);
     fetch(`/api/Weather?getcityID=${getcityID}`)
      .then(res => res.json())
-     .then(data => console.log(data));
+     //.then(data => console.log(data));
+     .then(data => {
+      console.log(data);
+      document.getElementById('published_at').innerText = data.published_at;  
+      document.getElementById('description').innerText = data.description;
+      document.getElementById('icon').src = data.forecasts[0].icon_url;
+     });
 });
+
 
 /*データの流れ（4ステップ）
 JSON → 配列 (cities)
