@@ -117,3 +117,19 @@ a:hover {
     color: #ffb974;
     text-decoration: underline;
 }
+.weather-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.weather-icon {
+  width: 64px;
+  height: 64px;
+}
+.temps {
+  display: flex;
+  flex-direction: column;  /* 上下2段 */
+}
+
+.temp-max { color: #e74c3c; }
+.temp-min { color: #3498db; }

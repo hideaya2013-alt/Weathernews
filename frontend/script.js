@@ -1,12 +1,12 @@
 const btn = document.getElementById('btn');
 const setcity = document.getElementById('setcity');
-const selectcity = document.getElementById('selectcity');
+const selectcity = document.getElementById('selectcity');//document.getElementById('selectcity') はDOM要素の参照を取得するだけなので、変数に入れておかないと使うたびに毎回DOMを検索することになります。
 
 fetch(`frontend/city.json`)//ファイルを読みに行く
 .then(res => res.json())//fetch した直後のデータは「生のレスポンス（通信結果）」という状態です。配列（オブジェクトに変換）
 .then(citeis =>{
     citeis.forEach(city =>{
-　　　　//変換されたデータ（cities）は、配列になっています
+       //変換されたデータ（cities）は、配列になっています
        //forEach を使い、配列の中身（名古屋市、岐阜市…）を 1つずつ順番に 取り出して、以下の処理を繰り返します。
         const option = document.createElement('option');// ① <option>タグを新しく作る
         option.value = city.id; // ② <option value="230010"> のようにIDを入れる
@@ -35,7 +35,9 @@ btn.addEventListener('click',()=>{
       console.log(data);
       document.getElementById('published_at').innerText = data.published_at;  
       document.getElementById('description').innerText = data.description;
-      document.getElementById('icon').src = data.forecasts[0].icon_url;
+      document.getElementById('icon').src = data.forecasts[1].icon_url;
+      document.getElementById('high_temp').textContent = `最高温度：${data.forecasts[1].high_temp}度`;
+      document.getElementById('low_temp').textContent = `最低温度：${data.forecasts[1].low_temp}度`;
      });
 });
 

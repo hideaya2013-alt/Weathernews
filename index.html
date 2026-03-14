@@ -20,7 +20,7 @@
 <section>
     <p>天気を表示する県を選んでください</p>
 <form id = "form">
-    <select name = "select" id = "selectcity">
+    <select name = "select" id = "selectcity"><!--<option value="ID">都市名</option> を作成 → selectcity に appendChild-->
         <!--
         <option value="230010" data-id="">名古屋市</option>
         <option value="210010" data-id="">岐阜市</option>
@@ -29,9 +29,19 @@
     </select>
     <button type="button" id = "btn">選択完了</button>
     <p id = "setcity"></p>
+    <!--<img id = "icon"></img>-->
+    <div class="weather-card">
+        <img id="icon" alt = "天気アイコン" class ="weather-icon">
+
+        <div class="temps">
+            <span class="temp-max" id="high_temp"></span>
+            <span class="temp-min" id="low_temp"></span>
+        </div>
+        
+    </div>
+
     <p id = "published_at"></p>
     <p id = "description"></p>
-    <img id = "icon"></img>
 </section>
 </div><!-- /.container -->
 </main>

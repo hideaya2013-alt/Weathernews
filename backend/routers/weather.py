@@ -22,7 +22,7 @@ async def get_Weather(getcityID:str): #←Swaggerのparametersに表示される
         return WeatherResponse(
             city_id = getcityID,
             published_at = data["publicTime"],
-            description = data["description"]["text"],
+            description = data["description"]["bodyText"],
             forecasts = [
             WeatherForecast(
             forecast_date = f["dateLabel"],
