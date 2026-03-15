@@ -17,9 +17,9 @@
 </header>
 <main>
 <div class="container">
-<section>
-    <p>天気を表示する県を選んでください</p>
-<form id = "form">
+ <section>
+    <p style="color: brown;">天気を表示する県を選んでください</p>
+ <form id = "form">
     <select name = "select" id = "selectcity"><!--<option value="ID">都市名</option> を作成 → selectcity に appendChild-->
         <!--
         <option value="230010" data-id="">名古屋市</option>
@@ -31,17 +31,19 @@
     <p id = "setcity"></p>
     <!--<img id = "icon"></img>-->
     <div class="weather-card">
-        <img id="icon" alt = "天気アイコン" class ="weather-icon">
-
-        <div class="temps">
-            <span class="temp-max" id="high_temp"></span>
-            <span class="temp-min" id="low_temp"></span>
+        <div class = "icon-wrap">
+          <img id = "icon" alt = "天気アイコン" class ="weather-icon">
+          <p id = "condition"></p>
         </div>
-        
+        <div class = "temps">
+            <span class = "temp-max" id="high_temp"></span>
+            <span class = "temp-min" id="low_temp"></span>
+        </div>
+         <p id = "description"></p>
     </div>
 
     <p id = "published_at"></p>
-    <p id = "description"></p>
+   
 </section>
 </div><!-- /.container -->
 </main>

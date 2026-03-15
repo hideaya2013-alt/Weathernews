@@ -38,6 +38,7 @@ btn.addEventListener('click',()=>{
       document.getElementById('icon').src = data.forecasts[1].icon_url;
       document.getElementById('high_temp').textContent = `最高温度：${data.forecasts[1].high_temp}度`;
       document.getElementById('low_temp').textContent = `最低温度：${data.forecasts[1].low_temp}度`;
+      document.getElementById('condition').textContent = `天気 : ${data.forecasts[1].condition}`;
      });
 });
 

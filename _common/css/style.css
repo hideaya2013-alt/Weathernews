@@ -13,13 +13,14 @@ body {
     margin: 0;
     font-family: 'M PLUS 1p', sans-serif;
     font-weight: 400;
-    background-color: #fff;
+    background-color: #ffffff;
     color: #000;
 }
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 16px;
+    padding: 15px;
+    color: #54c2e4;
 }
 .test-centered-text {
   text-align: center;
@@ -121,10 +122,13 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 16px;
+  background-color: #fffacd; 
+  padding: 12px;
+  border-radius: 8px;
 }
 .weather-icon {
-  width: 64px;
-  height: 64px;
+  width: 96px;
+  height: 96px;
 }
 .temps {
   display: flex;
@@ -133,3 +137,14 @@ a:hover {
 
 .temp-max { color: #e74c3c; }
 .temp-min { color: #3498db; }
+
+#description {
+  margin: 10px 0;
+  line-height: 1.0;
+  font-family: sans-serif;
+}
+.icon-wrap {
+  display: flex;
+  flex-direction: column;  /* アイコンとconditionを縦並び */
+  align-items: center;
+}

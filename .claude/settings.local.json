@@ -7,7 +7,8 @@
       "Bash(where gh.exe)",
       "WebFetch(domain:github.com)",
       "Bash(gh issue view 1 --repo hideaya2013-alt/Weathernews)",
-      "Bash(gh issue view 1)"
+      "Bash(gh issue view 1)",
+      "WebFetch(domain:feeds.reuters.com)"
     ]
   }
 }
